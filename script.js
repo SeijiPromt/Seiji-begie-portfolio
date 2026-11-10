@@ -20,17 +20,6 @@ menuButton.addEventListener('click', () => {
     menuPanel.classList.toggle('open');
 });
 
-// Folder accordion
-document.querySelectorAll('.menu-folder-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const folder = header.parentElement;
-        folder.classList.toggle('open');
-        if (folder.classList.contains('menu-folder-premium')) {
-            folder.classList.toggle('revealed');
-        }
-    });
-});
-
 // Typing effect for quote
 const quoteText = document.getElementById('quoteText');
 const fullQuote = quoteText.textContent;
