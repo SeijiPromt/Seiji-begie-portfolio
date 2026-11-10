@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- BACKGROUND MUSIC (Naka-loop ito kaya uulit) -->
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
     <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle dark/light mode">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -36,7 +41,7 @@
         <span class="menu-line"></span>
     </button>
 
-    <!-- BAGONG MENU PANEL (Puro Social Links na) -->
+    <!-- MENU PANEL (Puro Social Links na) -->
     <div class="menu-panel" id="menuPanel">
         <!-- Facebook -->
         <a href="https://www.facebook.com/begietheyearner" target="_blank" class="menu-item">
@@ -79,7 +84,7 @@
         <div class="profile-section">
             <div class="profile-image-wrapper">
                 <div class="glow-ring"></div>
-                <!-- Dito naka-lagay ang picture mo -->
+                <!-- Picture mo -->
                 <img src="profile.jpg" alt="Begie" class="profile-image">
             </div>
 
@@ -117,7 +122,6 @@
             </div>
 
             <div class="stats" id="statsContainer">
-                <!-- Tinanggal ang 12 Projects dito -->
                 <div class="stat-item">
                     <div class="stat-value">1</div>
                     <div class="stat-label">Year Exp.</div>
