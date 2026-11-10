@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begie - Portfolio</title>
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+
+    <meta property="og:title" content="Begie - Portfolio">
+    <meta property="og:description" content="Game Modder & Reverse Engineer">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Begie - Game Modder & Reverse Engineer">
+    <meta name="author" content="Begie">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bgMusic" loop preload="auto">
+        <source src="" type="audio/mpeg">
+    </audio>
+
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle dark/light mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <button class="menu-button" id="menuButton">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+    </button>
+
+    <div class="menu-panel" id="menuPanel">
+        <!-- MODDING TOOLS -->
+        <div class="menu-folder">
+            <div class="menu-folder-header">
+                <div class="menu-folder-label" style="display: flex; align-items: center;">
+                    <div class="menu-folder-cat-icon" style="background: rgba(59, 130, 246, 0.12); color: rgb(59, 130, 246);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    </div>
+                    <span class="menu-folder-icon">🛠️</span>
+                    <span class="menu-folder-name">MODDING TOOLS</span>
+                </div>
+                <div class="menu-folder-right" style="display: flex; align-items: center; gap: 8px;">
+                    <span class="menu-folder-count">7</span>
+                    <span class="menu-folder-arrow"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polyline points="3,2 7,5 3,8"></polyline></svg></span>
+                </div>
+            </div>
+            <div class="menu-folder-content">
+                <a href="https://www.cheatengine.org/" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(59, 130, 246, 0.12); color: rgb(59, 130, 246);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">CHEAT ENGINE</div>
+                        <div class="menu-item-desc">Memory scanning & debugging</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://hex-rays.com/ida-pro/" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(59, 130, 246, 0.12); color: rgb(59, 130, 246);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">IDA PRO</div>
+                        <div class="menu-item-desc">Disassembler & debugger</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://ghidra-sre.org/" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(59, 130, 246, 0.12); color: rgb(59, 130, 246);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">GHIDRA</div>
+                        <div class="menu-item-desc">NSA reverse engineering suite</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://github.com/ReClassNET/ReClass.NET" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(59, 130, 246, 0.12); color: rgb(59, 130, 246);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">RECLASS.NET</div>
+                        <div class="menu-item-desc">Memory class reconstruction</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://github.com/TsudaKageyu/minhook" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(59, 130, 246, 0.12); color: rgb(59, 130, 246);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">MINHOOK</div>
+                        <div class="menu-item-desc">API hooking library</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://github.com/microsoft/Detours" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(59, 130, 246, 0.12); color: rgb(59, 130, 246);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">DETOURS</div>
+                        <div class="menu-item-desc">Microsoft detouring library</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://github.com/ocornut/imgui" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(59, 130, 246, 0.12); color: rgb(59, 130, 246);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">IMGUI</div>
+                        <div class="menu-item-desc">DirectX overlay UI</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- PREMIUM TOOLS -->
+        <div class="menu-folder menu-folder-premium">
+            <div class="menu-folder-header">
+                <div class="menu-folder-label" style="display: flex; align-items: center;">
+                    <div class="menu-folder-cat-icon" style="background: rgba(249, 115, 22, 0.12); color: rgb(249, 115, 22);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <span class="menu-folder-icon">⭐</span>
+                    <span class="menu-folder-name">PREMIUM TOOLS</span>
+                </div>
+                <div class="menu-folder-right" style="display: flex; align-items: center; gap: 8px;">
+                    <span class="menu-folder-arrow"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polyline points="3,2 7,5 3,8"></polyline></svg></span>
+                </div>
+            </div>
+            <div class="menu-folder-desc">premium modding tools using C++</div>
+            <div class="menu-folder-content">
+                <a href="#" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(249, 115, 22, 0.12); color: rgb(249, 115, 22);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">PREMIUM TRAINER</div>
+                        <div class="menu-item-desc">Private mod menu</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="#" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(249, 115, 22, 0.12); color: rgb(249, 115, 22);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">CUSTOM DLL</div>
+                        <div class="menu-item-desc">Private injection build</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- DOWNLOADER / RESOURCES -->
+        <div class="menu-folder">
+            <div class="menu-folder-header">
+                <div class="menu-folder-label" style="display: flex; align-items: center;">
+                    <div class="menu-folder-cat-icon" style="background: rgba(34, 197, 94, 0.12); color: rgb(34, 197, 94);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <span class="menu-folder-icon">⬇️</span>
+                    <span class="menu-folder-name">RESOURCES</span>
+                </div>
+                <div class="menu-folder-right" style="display: flex; align-items: center; gap: 8px;">
+                    <span class="menu-folder-count">6</span>
+                    <span class="menu-folder-arrow"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polyline points="3,2 7,5 3,8"></polyline></svg></span>
+                </div>
+            </div>
+            <div class="menu-folder-content">
+                <a href="https://github.com/YOUR_GITHUB_USERNAME/fps-trainer" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(34, 197, 94, 0.12); color: rgb(34, 197, 94);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">FPS TRAINER</div>
+                        <div class="menu-item-desc">Internal DLL with ImGui overlay</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://github.com/YOUR_GITHUB_USERNAME/unity-il2cpp-framework" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(34, 197, 94, 0.12); color: rgb(34, 197, 94);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">UNITY IL2CPP</div>
+                        <div class="menu-item-desc">Mod framework for Unity games</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://github.com/YOUR_GITHUB_USERNAME/memory-scanner" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(34, 197, 94, 0.12); color: rgb(34, 197, 94);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">MEMORY SCANNER</div>
+                        <div class="menu-item-desc">Pointer chain resolver</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://github.com/YOUR_GITHUB_USERNAME/overlay-toolkit" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(34, 197, 94, 0.12); color: rgb(34, 197, 94);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">OVERLAY TOOLKIT</div>
+                        <div class="menu-item-desc">DirectX 11 overlay library</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://github.com/YOUR_GITHUB_USERNAME/hook-library" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(34, 197, 94, 0.12); color: rgb(34, 197, 94);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">HOOK LIBRARY</div>
+                        <div class="menu-item-desc">Runtime API hooking</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+                <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" class="menu-item">
+                    <div class="menu-item-icon" style="background: rgba(34, 197, 94, 0.12); color: rgb(34, 197, 94);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div class="menu-item-body">
+                        <div class="menu-item-title">GITHUB REPOS</div>
+                        <div class="menu-item-desc">All my open-source projects</div>
+                    </div>
+                    <div class="menu-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-image-wrapper">
+                <div class="glow-ring"></div>
+                <img src="favicon.svg" alt="Profile Picture" class="profile-image">
+            </div>
+
+            <h1 class="profile-name" id="profileName">
+                <span>Begie</span>
+                <span class="verified-badge">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="20" fill="#1877F2"></circle>
+                        <path d="M7.03 20L15.85 28.82L32.97 11.7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                    </svg>
+                </span>
+            </h1>
+            <p class="profile-subtitle">Game Modder</p>
+            <p class="beta-label">(beta)</p>
+            <p class="profile-quote quote-glow" id="typingQuote" style="color: rgb(26, 188, 156);">
+                <span id="quoteText">Understanding the game beneath the game.</span><span class="typing-cursor"></span>
+            </p>
+
+            <div class="social-icons" id="socialIcons">
+                <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" class="social-icon" title="GitHub">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                </a>
+                <a href="https://www.facebook.com/YOUR_FACEBOOK" target="_blank" class="social-icon" title="Facebook">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" class="social-icon" title="Instagram">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.354 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="stats" id="statsContainer">
+            <div class="stat-item">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Years Exp.</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">Philippines</div>
+                <div class="stat-label">Location</div>
+            </div>
+        </div>
+
+        <div class="time-battery-section">
+            <div class="ph-time-display" id="phTime">--:--:-- --</div>
+            <div class="ping-display" id="pingValue">--ms</div>
+            <div class="time-label">PHT (GMT+8)</div>
+
+            <div class="battery-container">
+                <div class="battery-icon">
+                    <div class="battery-fill" id="batteryFill" style="width: 100%;"></div>
+                </div>
+                <div class="battery-percentage" id="batteryPercentage">100%</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">© 2026 | Developed by: Begie</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+      </html>
