@@ -1,4 +1,25 @@
-// Theme toggle
+// --- BACKGROUND MUSIC AUTOPLAY & LOOP ---
+const bgMusic = document.getElementById('bgMusic');
+if (bgMusic) {
+    bgMusic.volume = 0.4; // 0.0 to 1.0 (0.4 = 40% lakas)
+
+    // Kapag nag-click, nag-scroll, o nag-touch ang user, tutugtog agad
+    const playMusic = () => {
+        if (bgMusic.paused) {
+            bgMusic.play().catch(e => console.log("Autoplay blocked by browser", e));
+        }
+        // Tanggalin na yung event listeners pagkatugtog na para hindi mag-loop ng loop
+        document.removeEventListener('click', playMusic);
+        document.removeEventListener('scroll', playMusic);
+        document.removeEventListener('touchstart', playMusic);
+    };
+
+    document.addEventListener('click', playMusic);
+    document.addEventListener('scroll', playMusic);
+    document.addEventListener('touchstart', playMusic);
+}
+
+// --- Theme toggle ---
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 const body = document.body;
@@ -11,7 +32,7 @@ themeToggle.addEventListener('click', () => {
     setTimeout(() => body.classList.remove('theme-transitioning'), 600);
 });
 
-// Menu toggle
+// --- Menu toggle ---
 const menuButton = document.getElementById('menuButton');
 const menuPanel = document.getElementById('menuPanel');
 
@@ -20,7 +41,7 @@ menuButton.addEventListener('click', () => {
     menuPanel.classList.toggle('open');
 });
 
-// Typing effect for quote
+// --- Typing effect for quote ---
 const quoteText = document.getElementById('quoteText');
 const fullQuote = quoteText.textContent;
 quoteText.textContent = '';
@@ -36,7 +57,7 @@ function typeQuote() {
 
 setTimeout(typeQuote, 1000);
 
-// PH Time
+// --- PH Time ---
 function updatePHTime() {
     const now = new Date();
     const options = {
@@ -52,7 +73,7 @@ function updatePHTime() {
 updatePHTime();
 setInterval(updatePHTime, 1000);
 
-// Simulated ping
+// --- Simulated ping ---
 function updatePing() {
     const ping = Math.floor(Math.random() * 50) + 10;
     document.getElementById('pingValue').textContent = ping + 'ms';
@@ -61,7 +82,7 @@ function updatePing() {
 updatePing();
 setInterval(updatePing, 3000);
 
-// Battery status
+// --- Battery status ---
 if (navigator.getBattery) {
     navigator.getBattery().then(battery => {
         const fill = document.getElementById('batteryFill');
