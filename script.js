@@ -1,22 +1,33 @@
-// --- BACKGROUND MUSIC AUTOPLAY & LOOP ---
+// --- BACKGROUND MUSIC (MAS MALAKAS NA AUTOPLAY TRICK) ---
 const bgMusic = document.getElementById('bgMusic');
 if (bgMusic) {
-    bgMusic.volume = 0.4; // 0.0 to 1.0 (0.4 = 40% lakas)
+    bgMusic.volume = 0.4; // 40% volume
 
-    // Kapag nag-click, nag-scroll, o nag-touch ang user, tutugtog agad
+    // Function para patugtugin
     const playMusic = () => {
         if (bgMusic.paused) {
-            bgMusic.play().catch(e => console.log("Autoplay blocked by browser", e));
+            bgMusic.play()
+                .then(() => {
+                    // Kapag tumugtog na, aalisin na natin yung mga trigger para hindi magulo
+                    document.removeEventListener('click', playMusic);
+                    document.removeEventListener('touchstart', playMusic);
+                    document.removeEventListener('scroll', playMusic);
+                    document.removeEventListener('keydown', playMusic);
+                })
+                .catch(e => console.log("Autoplay blocked by browser:", e));
         }
-        // Tanggalin na yung event listeners pagkatugtog na para hindi mag-loop ng loop
-        document.removeEventListener('click', playMusic);
-        document.removeEventListener('scroll', playMusic);
-        document.removeEventListener('touchstart', playMusic);
     };
 
+    // Susubukan patugtugin sa kahit anong galaw ng user
     document.addEventListener('click', playMusic);
-    document.addEventListener('scroll', playMusic);
     document.addEventListener('touchstart', playMusic);
+    document.addEventListener('scroll', playMusic);
+    document.addEventListener('keydown', playMusic);
+    
+    // Fallback: Subukan agad i-play pagkabukas (baka sakaling payagan ng browser)
+    bgMusic.play().catch(() => {
+        console.log("Naka-block ang agad na autoplay. Maghihintay ng click/touch.");
+    });
 }
 
 // --- Theme toggle ---
@@ -43,19 +54,21 @@ menuButton.addEventListener('click', () => {
 
 // --- Typing effect for quote ---
 const quoteText = document.getElementById('quoteText');
-const fullQuote = quoteText.textContent;
-quoteText.textContent = '';
-let i = 0;
+if (quoteText) {
+    const fullQuote = quoteText.textContent;
+    quoteText.textContent = '';
+    let i = 0;
 
-function typeQuote() {
-    if (i < fullQuote.length) {
-        quoteText.textContent += fullQuote.charAt(i);
-        i++;
-        setTimeout(typeQuote, 50);
+    function typeQuote() {
+        if (i < fullQuote.length) {
+            quoteText.textContent += fullQuote.charAt(i);
+            i++;
+            setTimeout(typeQuote, 50);
+        }
     }
-}
 
-setTimeout(typeQuote, 1000);
+    setTimeout(typeQuote, 1000);
+}
 
 // --- PH Time ---
 function updatePHTime() {
@@ -67,7 +80,8 @@ function updatePHTime() {
         second: '2-digit',
         hour12: true
     };
-    document.getElementById('phTime').textContent = now.toLocaleTimeString('en-US', options);
+    const phTimeEl = document.getElementById('phTime');
+    if (phTimeEl) phTimeEl.textContent = now.toLocaleTimeString('en-US', options);
 }
 
 updatePHTime();
@@ -76,7 +90,8 @@ setInterval(updatePHTime, 1000);
 // --- Simulated ping ---
 function updatePing() {
     const ping = Math.floor(Math.random() * 50) + 10;
-    document.getElementById('pingValue').textContent = ping + 'ms';
+    const pingEl = document.getElementById('pingValue');
+    if (pingEl) pingEl.textContent = ping + 'ms';
 }
 
 updatePing();
@@ -89,6 +104,7 @@ if (navigator.getBattery) {
         const percentage = document.getElementById('batteryPercentage');
 
         function updateBattery() {
+            if (!fill || !percentage) return;
             const level = Math.round(battery.level * 100);
             fill.style.width = level + '%';
             percentage.textContent = level + '%';
@@ -102,5 +118,6 @@ if (navigator.getBattery) {
         battery.addEventListener('levelchange', updateBattery);
     });
 } else {
-    document.getElementById('batteryPercentage').textContent = 'N/A';
+    const perc = document.getElementById('batteryPercentage');
+    if (perc) perc.textContent = 'N/A';
 }
